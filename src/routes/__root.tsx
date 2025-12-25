@@ -3,6 +3,7 @@ import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-r
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import { ValuationProvider } from "@/context/ValuationContext";
 
 import appCss from "../styles.css?url";
 
@@ -51,10 +52,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 bg-slate-50">{children}</main>
-        <Footer />
-        <DisclaimerModal />
+        <ValuationProvider>
+          <Header />
+          <main className="flex-1 bg-slate-50">{children}</main>
+          <Footer />
+          <DisclaimerModal />
+        </ValuationProvider>
         <Scripts />
       </body>
     </html>
