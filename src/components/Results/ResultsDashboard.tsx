@@ -2,11 +2,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import { BarChart3, TrendingUp, Percent, PiggyBank, Scale, Calculator } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  BarChart3,
+  TrendingUp,
+  Percent,
+  PiggyBank,
+  Scale,
+  Calculator,
+  FileDown,
+} from "lucide-react";
 
 import { useValuation } from "@/context/ValuationContext";
 import VerdictCard from "./VerdictCard";
 import MetricCard from "./MetricCard";
+import ValuationChart from "./ValuationChart";
+import { exportToPDF } from "@/utils/pdfExport";
 
 // Format currency in KES
 function formatKES(value: number): string {
@@ -23,7 +34,13 @@ function formatKES(value: number): string {
 }
 
 export default function ResultsDashboard() {
-  const { metrics, scoring, inputs } = useValuation();
+  const { metrics, scoring, inputs, analysisResult } = useValuation();
+
+  const handleExportPDF = async () => {
+    if (analysisResult) {
+      await exportToPDF(analysisResult);
+    }
+  };
 
   if (!metrics || !scoring || !inputs) {
     return (
@@ -48,8 +65,25 @@ export default function ResultsDashboard() {
 
   return (
     <div className="space-y-6">
+      {/* Header with Export */}
+      <div className="flex items-center justify-between">
+        <h2 className="text-lg font-semibold text-[#1E3A5F]">Analysis Results</h2>
+        <Button variant="outline" size="sm" onClick={handleExportPDF} className="gap-2">
+          <FileDown className="h-4 w-4" />
+          Export PDF
+        </Button>
+      </div>
+
       {/* Verdict Card */}
       <VerdictCard scoring={scoring} companyName={inputs.company.name} />
+
+      {/* Valuation Chart */}
+      <ValuationChart
+        currentPrice={inputs.market.currentStockPrice}
+        bookValue={metrics.bvps}
+        intrinsicValue={metrics.intrinsicValue}
+        companyName={inputs.company.name}
+      />
 
       {/* Metrics Tabs */}
       <Card>

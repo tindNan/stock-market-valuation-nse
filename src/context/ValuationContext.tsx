@@ -11,6 +11,7 @@ interface ValuationContextType {
   analysisResult: AnalysisResult | null;
   isCalculating: boolean;
   calculate: (inputs: AllInputs) => void;
+  loadAnalysisResult: (result: AnalysisResult) => void;
   clear: () => void;
 }
 
@@ -84,6 +85,13 @@ export function ValuationProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const loadAnalysisResult = useCallback((result: AnalysisResult) => {
+    setInputs(result.inputs);
+    setMetrics(result.metrics);
+    setScoring(result.scoring);
+    setAnalysisResult(result);
+  }, []);
+
   const clear = useCallback(() => {
     setInputs(null);
     setMetrics(null);
@@ -100,6 +108,7 @@ export function ValuationProvider({ children }: { children: ReactNode }) {
         analysisResult,
         isCalculating,
         calculate,
+        loadAnalysisResult,
         clear,
       }}
     >
