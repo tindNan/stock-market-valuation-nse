@@ -14,23 +14,23 @@
 
 ### MVP Features (Phase 1)
 
-| Feature | Description | Priority |
-|---------|-------------|----------|
-| Manual Data Entry | User inputs key financial figures from annual reports | High |
-| Valuation Metrics Calculator | Calculates all key ratios automatically | High |
-| Valuation Verdict | Provides a simple recommendation based on metrics | High |
-| Visual Dashboard | Charts showing how metrics compare to benchmarks | Medium |
-| Export Results | Download analysis as PDF | Medium |
+| Feature                      | Description                                           | Priority |
+| ---------------------------- | ----------------------------------------------------- | -------- |
+| Manual Data Entry            | User inputs key financial figures from annual reports | High     |
+| Valuation Metrics Calculator | Calculates all key ratios automatically               | High     |
+| Valuation Verdict            | Provides a simple recommendation based on metrics     | High     |
+| Visual Dashboard             | Charts showing how metrics compare to benchmarks      | Medium   |
+| Export Results               | Download analysis as PDF                              | Medium   |
 
 ### Future Features (Phase 2)
 
-| Feature | Description | Priority |
-|---------|-------------|----------|
-| NSE Data Integration | Auto-fetch stock prices from NSE | Medium |
-| Historical Comparison | Compare current vs past valuations | Medium |
-| Sector Benchmarks | Compare against banking/manufacturing/telco averages | Low |
-| Portfolio Tracker | Track multiple stocks you're watching | Low |
-| Alerts | Notify when a stock hits your target price | Low |
+| Feature               | Description                                          | Priority |
+| --------------------- | ---------------------------------------------------- | -------- |
+| NSE Data Integration  | Auto-fetch stock prices from NSE                     | Medium   |
+| Historical Comparison | Compare current vs past valuations                   | Medium   |
+| Sector Benchmarks     | Compare against banking/manufacturing/telco averages | Low      |
+| Portfolio Tracker     | Track multiple stocks you're watching                | Low      |
+| Alerts                | Notify when a stock hits your target price           | Low      |
 
 ---
 
@@ -38,34 +38,34 @@
 
 ### From Annual Report (User Enters)
 
-| Input Field | Where to Find It | Example (NCBA 2024) |
-|-------------|------------------|---------------------|
-| Company Name | Cover page | NCBA Group PLC |
-| Financial Year | Cover page | 2024 |
-| Total Shareholders' Equity | Statement of Financial Position | KES 109,714,749,000 |
-| Shares Outstanding | Notes to accounts / Corporate info | 1,647,519,200 |
-| Profit After Tax | Statement of Profit or Loss | KES 21,865,767,000 |
-| Total Revenue | Statement of Profit or Loss | KES 57,220,000,000 |
-| Total Assets | Statement of Financial Position | KES 666,000,000,000 |
-| Total Liabilities | Statement of Financial Position | KES 556,285,251,000 |
-| Dividend Per Share | Directors' Report / Dividend section | KES 5.50 |
-| Previous Year Dividend | Prior year report | KES 4.75 |
+| Input Field                | Where to Find It                     | Example (NCBA 2024) |
+| -------------------------- | ------------------------------------ | ------------------- |
+| Company Name               | Cover page                           | NCBA Group PLC      |
+| Financial Year             | Cover page                           | 2024                |
+| Total Shareholders' Equity | Statement of Financial Position      | KES 109,714,749,000 |
+| Shares Outstanding         | Notes to accounts / Corporate info   | 1,647,519,200       |
+| Profit After Tax           | Statement of Profit or Loss          | KES 21,865,767,000  |
+| Total Revenue              | Statement of Profit or Loss          | KES 57,220,000,000  |
+| Total Assets               | Statement of Financial Position      | KES 666,000,000,000 |
+| Total Liabilities          | Statement of Financial Position      | KES 556,285,251,000 |
+| Dividend Per Share         | Directors' Report / Dividend section | KES 5.50            |
+| Previous Year Dividend     | Prior year report                    | KES 4.75            |
 
 ### Market Data (User Enters)
 
-| Input Field | Where to Find It | Example |
-|-------------|------------------|---------|
-| Current Stock Price | NSE, mystocks.co.ke, rich.co.ke | KES 76.50 |
-| 52-Week High | Stock tracking sites | KES 100.00 |
-| 52-Week Low | Stock tracking sites | KES 40.00 |
+| Input Field         | Where to Find It                | Example    |
+| ------------------- | ------------------------------- | ---------- |
+| Current Stock Price | NSE, mystocks.co.ke, rich.co.ke | KES 76.50  |
+| 52-Week High        | Stock tracking sites            | KES 100.00 |
+| 52-Week Low         | Stock tracking sites            | KES 40.00  |
 
 ### User Assumptions (For DCF)
 
-| Input Field | Description | Suggested Default |
-|-------------|-------------|-------------------|
-| Required Rate of Return | Minimum return investor expects | 15% |
-| Expected Dividend Growth Rate | How fast dividends will grow | 5% |
-| Risk-Free Rate | Treasury bill rate | 10% |
+| Input Field                   | Description                     | Suggested Default |
+| ----------------------------- | ------------------------------- | ----------------- |
+| Required Rate of Return       | Minimum return investor expects | 15%               |
+| Expected Dividend Growth Rate | How fast dividends will grow    | 5%                |
+| Risk-Free Rate                | Treasury bill rate              | 10%               |
 
 ---
 
@@ -80,11 +80,13 @@ BVPS = Total Shareholders' Equity / Shares Outstanding
 ```
 
 **Example:**
+
 ```
 BVPS = 109,714,749,000 / 1,647,519,200 = KES 66.60
 ```
 
 **Interpretation:**
+
 - This is the "floor value" of the stock
 - If company liquidated, shareholders would theoretically get this amount per share
 
@@ -99,6 +101,7 @@ P/B Ratio = Current Stock Price / Book Value Per Share
 ```
 
 **Example:**
+
 ```
 P/B = 76.50 / 66.60 = 1.15x
 ```
@@ -122,6 +125,7 @@ EPS = Profit After Tax / Shares Outstanding
 ```
 
 **Example:**
+
 ```
 EPS = 21,865,767,000 / 1,647,519,200 = KES 13.27
 ```
@@ -137,6 +141,7 @@ P/E Ratio = Current Stock Price / Earnings Per Share
 ```
 
 **Example:**
+
 ```
 P/E = 76.50 / 13.27 = 5.77x
 ```
@@ -151,6 +156,7 @@ P/E = 76.50 / 13.27 = 5.77x
 | > 25 | Very expensive (exceptional growth needed) |
 
 **Sector Benchmarks (Kenya):**
+
 - Banks: 4x - 8x
 - Telecoms: 8x - 15x
 - Manufacturing: 6x - 12x
@@ -166,6 +172,7 @@ Dividend Yield = (Annual Dividend Per Share / Current Stock Price) × 100
 ```
 
 **Example:**
+
 ```
 Dividend Yield = (5.50 / 76.50) × 100 = 7.19%
 ```
@@ -179,6 +186,7 @@ Dividend Yield = (5.50 / 76.50) × 100 = 7.19%
 | > 8% | High yield (may be unsustainable or stock fallen) |
 
 **Compare to:**
+
 - Bank savings: 4-6%
 - Treasury bills: 10-12%
 - Inflation: ~5%
@@ -194,6 +202,7 @@ Payout Ratio = (Dividend Per Share / Earnings Per Share) × 100
 ```
 
 **Example:**
+
 ```
 Payout Ratio = (5.50 / 13.27) × 100 = 41.4%
 ```
@@ -217,6 +226,7 @@ ROE = (Profit After Tax / Total Shareholders' Equity) × 100
 ```
 
 **Example:**
+
 ```
 ROE = (21,865,767,000 / 109,714,749,000) × 100 = 19.93%
 ```
@@ -240,6 +250,7 @@ ROA = (Profit After Tax / Total Assets) × 100
 ```
 
 **Example:**
+
 ```
 ROA = (21,865,767,000 / 666,000,000,000) × 100 = 3.28%
 ```
@@ -263,18 +274,19 @@ D/E Ratio = Total Liabilities / Total Shareholders' Equity
 ```
 
 **Example:**
+
 ```
 D/E = 556,285,251,000 / 109,714,749,000 = 5.07x
 ```
 
 **Note:** Banks naturally have high D/E ratios (deposits are liabilities). For non-banks:
 
-| D/E Range | Signal |
-|-----------|--------|
-| < 0.5 | Conservative |
-| 0.5 - 1.0 | Moderate |
-| 1.0 - 2.0 | Leveraged |
-| > 2.0 | Highly leveraged (risky for non-banks) |
+| D/E Range | Signal                                 |
+| --------- | -------------------------------------- |
+| < 0.5     | Conservative                           |
+| 0.5 - 1.0 | Moderate                               |
+| 1.0 - 2.0 | Leveraged                              |
+| > 2.0     | Highly leveraged (risky for non-banks) |
 
 ---
 
@@ -292,12 +304,14 @@ g = Expected dividend growth rate (as decimal)
 ```
 
 **Example:**
+
 ```
 D₁ = 5.50 × (1 + 0.05) = 5.775
 Intrinsic Value = 5.775 / (0.15 - 0.05) = KES 57.75
 ```
 
 **Interpretation:**
+
 - If Intrinsic Value > Current Price → Potentially undervalued (BUY signal)
 - If Intrinsic Value < Current Price → Potentially overvalued (HOLD/SELL signal)
 - If Intrinsic Value ≈ Current Price → Fairly valued
@@ -313,6 +327,7 @@ Margin of Safety = ((Intrinsic Value - Current Price) / Intrinsic Value) × 100
 ```
 
 **Example (if intrinsic value was KES 90):**
+
 ```
 Margin of Safety = ((90 - 76.50) / 90) × 100 = 15%
 ```
@@ -336,11 +351,13 @@ Earnings Yield = (EPS / Current Price) × 100
 ```
 
 **Example:**
+
 ```
 Earnings Yield = (13.27 / 76.50) × 100 = 17.3%
 ```
 
 **Interpretation:**
+
 - Compare to risk-free rate (T-bills)
 - If Earnings Yield > T-bill rate → Stock may be attractive
 - Higher is better
@@ -356,6 +373,7 @@ Dividend Growth Rate = ((Current Dividend / Previous Dividend) - 1) × 100
 ```
 
 **Example:**
+
 ```
 Growth = ((5.50 / 4.75) - 1) × 100 = 15.8%
 ```
@@ -371,6 +389,7 @@ PEG Ratio = P/E Ratio / Earnings Growth Rate
 ```
 
 **Example (if earnings grew 10%):**
+
 ```
 PEG = 5.77 / 10 = 0.58
 ```
@@ -390,25 +409,25 @@ The app will provide a simple verdict based on weighted scoring:
 
 ### Scoring System
 
-| Metric | Weight | Scoring Criteria |
-|--------|--------|------------------|
-| P/B Ratio | 15% | <1.0: +2, 1.0-1.5: +1, 1.5-2.0: 0, >2.0: -1 |
-| P/E Ratio | 20% | <8: +2, 8-12: +1, 12-18: 0, >18: -1 |
-| Dividend Yield | 15% | >7%: +2, 5-7%: +1, 2-5%: 0, <2%: -1 |
-| ROE | 15% | >20%: +2, 15-20%: +1, 10-15%: 0, <10%: -1 |
-| Intrinsic vs Price | 20% | >30% margin: +2, 15-30%: +1, 0-15%: 0, <0%: -1 |
-| Payout Ratio | 10% | 30-50%: +2, 50-70%: +1, <30% or >70%: 0 |
-| Earnings Yield vs T-bill | 5% | >1.5x: +2, 1-1.5x: +1, <1x: -1 |
+| Metric                   | Weight | Scoring Criteria                               |
+| ------------------------ | ------ | ---------------------------------------------- |
+| P/B Ratio                | 15%    | <1.0: +2, 1.0-1.5: +1, 1.5-2.0: 0, >2.0: -1    |
+| P/E Ratio                | 20%    | <8: +2, 8-12: +1, 12-18: 0, >18: -1            |
+| Dividend Yield           | 15%    | >7%: +2, 5-7%: +1, 2-5%: 0, <2%: -1            |
+| ROE                      | 15%    | >20%: +2, 15-20%: +1, 10-15%: 0, <10%: -1      |
+| Intrinsic vs Price       | 20%    | >30% margin: +2, 15-30%: +1, 0-15%: 0, <0%: -1 |
+| Payout Ratio             | 10%    | 30-50%: +2, 50-70%: +1, <30% or >70%: 0        |
+| Earnings Yield vs T-bill | 5%     | >1.5x: +2, 1-1.5x: +1, <1x: -1                 |
 
 ### Verdict Thresholds
 
-| Total Score | Verdict | Color |
-|-------------|---------|-------|
-| > 1.5 | STRONG BUY | Green |
-| 0.5 to 1.5 | BUY | Light Green |
-| -0.5 to 0.5 | HOLD | Yellow |
-| -1.5 to -0.5 | SELL | Orange |
-| < -1.5 | STRONG SELL | Red |
+| Total Score  | Verdict     | Color       |
+| ------------ | ----------- | ----------- |
+| > 1.5        | STRONG BUY  | Green       |
+| 0.5 to 1.5   | BUY         | Light Green |
+| -0.5 to 0.5  | HOLD        | Yellow      |
+| -1.5 to -0.5 | SELL        | Orange      |
+| < -1.5       | STRONG SELL | Red         |
 
 ---
 
@@ -455,14 +474,14 @@ The app will provide a simple verdict based on weighted scoring:
 
 ### Color Scheme
 
-| Element | Color | Hex Code |
-|---------|-------|----------|
-| Primary (Headers) | Deep Blue | #1E3A5F |
-| Positive/Buy | Green | #28A745 |
-| Negative/Sell | Red | #DC3545 |
-| Neutral/Hold | Amber | #FFC107 |
-| Background | Light Gray | #F8F9FA |
-| Cards | White | #FFFFFF |
+| Element           | Color      | Hex Code |
+| ----------------- | ---------- | -------- |
+| Primary (Headers) | Deep Blue  | #1E3A5F  |
+| Positive/Buy      | Green      | #28A745  |
+| Negative/Sell     | Red        | #DC3545  |
+| Neutral/Hold      | Amber      | #FFC107  |
+| Background        | Light Gray | #F8F9FA  |
+| Cards             | White      | #FFFFFF  |
 
 ---
 
@@ -519,6 +538,7 @@ stock-valuation-app/
 ## Development Phases
 
 ### Phase 1: MVP (Week 1-2)
+
 - [ ] Basic input form
 - [ ] All 14 formulas implemented
 - [ ] Results display with verdict
@@ -526,6 +546,7 @@ stock-valuation-app/
 - [ ] Mobile responsive design
 
 ### Phase 2: Enhanced UX (Week 3-4)
+
 - [ ] Educational tooltips
 - [ ] Input validation
 - [ ] Save to local storage
@@ -533,6 +554,7 @@ stock-valuation-app/
 - [ ] Sector benchmark selection
 
 ### Phase 3: Data Integration (Week 5-8)
+
 - [ ] NSE price API integration
 - [ ] Historical data storage
 - [ ] Comparison across time periods
@@ -545,6 +567,7 @@ stock-valuation-app/
 ### Test Case 1: NCBA Group 2024
 
 **Inputs:**
+
 - Shareholders' Equity: 109,714,749,000
 - Shares Outstanding: 1,647,519,200
 - Profit After Tax: 21,865,767,000
@@ -554,6 +577,7 @@ stock-valuation-app/
 - Growth Rate: 5%
 
 **Expected Outputs:**
+
 - BVPS: KES 66.60
 - P/B: 1.15x
 - EPS: KES 13.27
@@ -566,12 +590,14 @@ stock-valuation-app/
 ### Test Case 2: Overvalued Stock (Hypothetical)
 
 **Inputs:**
+
 - Stock Price: 150
 - Book Value: 50
 - EPS: 5
 - Dividend: 1
 
 **Expected Outputs:**
+
 - P/B: 3.0x (expensive)
 - P/E: 30x (expensive)
 - Dividend Yield: 0.67% (low)
@@ -584,22 +610,22 @@ stock-valuation-app/
 ```
 ⚠️ IMPORTANT DISCLAIMERS:
 
-1. This tool provides educational analysis only and should not be 
+1. This tool provides educational analysis only and should not be
    considered as professional financial advice.
 
-2. Past performance does not guarantee future results. Stock prices 
+2. Past performance does not guarantee future results. Stock prices
    can go down as well as up.
 
-3. The valuations are based on user-provided inputs. Errors in data 
+3. The valuations are based on user-provided inputs. Errors in data
    entry will produce incorrect results.
 
-4. Intrinsic value calculations depend heavily on assumptions about 
+4. Intrinsic value calculations depend heavily on assumptions about
    future growth rates and required returns.
 
-5. Always conduct your own research and consider consulting a 
+5. Always conduct your own research and consider consulting a
    licensed investment advisor before making investment decisions.
 
-6. The developers of this tool are not liable for any investment 
+6. The developers of this tool are not liable for any investment
    losses incurred based on its outputs.
 ```
 
@@ -629,6 +655,6 @@ stock-valuation-app/
 
 ---
 
-*Document Version: 1.0*
-*Created: December 2025*
-*For: NSE Stock Valuation Web App*
+_Document Version: 1.0_
+_Created: December 2025_
+_For: NSE Stock Valuation Web App_
