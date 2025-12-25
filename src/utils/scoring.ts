@@ -2,8 +2,21 @@ import type { ValuationMetrics, Sector, MetricScore, ScoringResult, VerdictType 
 import { VERDICT_COLORS } from "@/types";
 
 /**
+ * Equal weight for all metrics (~14.29% each)
+ *
+ * We use equal weighting because:
+ * 1. Academic research shows equal weights often perform as well as optimized weights
+ * 2. It's more defensible than arbitrary weights without backtesting
+ * 3. No single metric should dominate the overall score
+ *
+ * Reference: DeMiguel, V., Garlappi, L., & Uppal, R. (2009). "Optimal Versus Naive
+ * Diversification: How Inefficient is the 1/N Portfolio Strategy?"
+ */
+const EQUAL_WEIGHT = 14.29;
+
+/**
  * Score P/B Ratio
- * Weight: 15%
+ * Weight: Equal (~14.29%)
  * < 1.0: +2 (undervalued)
  * 1.0 - 1.5: +1 (fairly valued)
  * 1.5 - 2.0: 0 (slight premium)
@@ -36,12 +49,12 @@ export function scorePBRatio(pbRatio: number): MetricScore {
     description = "Expensive relative to book value";
   }
 
-  return { value: pbRatio, score, weight: 15, interpretation, description };
+  return { value: pbRatio, score, weight: EQUAL_WEIGHT, interpretation, description };
 }
 
 /**
  * Score P/E Ratio
- * Weight: 20%
+ * Weight: Equal (~14.29%)
  * < 8: +2 (cheap)
  * 8 - 12: +1 (reasonable)
  * 12 - 18: 0 (fairly valued)
@@ -74,12 +87,12 @@ export function scorePERatio(peRatio: number): MetricScore {
     description = "Expensive - high growth expectations priced in";
   }
 
-  return { value: peRatio, score, weight: 20, interpretation, description };
+  return { value: peRatio, score, weight: EQUAL_WEIGHT, interpretation, description };
 }
 
 /**
  * Score Dividend Yield
- * Weight: 15%
+ * Weight: Equal (~14.29%)
  * > 7%: +2 (high yield)
  * 5% - 7%: +1 (good yield)
  * 2% - 5%: 0 (moderate)
@@ -111,7 +124,7 @@ export function scoreDividendYield(dividendYield: number): MetricScore {
   return {
     value: dividendYield,
     score,
-    weight: 15,
+    weight: EQUAL_WEIGHT,
     interpretation,
     description,
   };
@@ -119,7 +132,7 @@ export function scoreDividendYield(dividendYield: number): MetricScore {
 
 /**
  * Score ROE (Return on Equity)
- * Weight: 15%
+ * Weight: Equal (~14.29%)
  * > 20%: +2 (excellent)
  * 15% - 20%: +1 (good)
  * 10% - 15%: 0 (acceptable)
@@ -148,12 +161,12 @@ export function scoreROE(roe: number): MetricScore {
     description = "Poor profitability";
   }
 
-  return { value: roe, score, weight: 15, interpretation, description };
+  return { value: roe, score, weight: EQUAL_WEIGHT, interpretation, description };
 }
 
 /**
  * Score Margin of Safety
- * Weight: 20%
+ * Weight: Equal (~14.29%)
  * > 30%: +2 (excellent value)
  * 15% - 30%: +1 (good buying opportunity)
  * 0% - 15%: 0 (fairly valued)
@@ -189,7 +202,7 @@ export function scoreMarginOfSafety(marginOfSafety: number | null): MetricScore 
   return {
     value: marginOfSafety ?? 0,
     score,
-    weight: 20,
+    weight: EQUAL_WEIGHT,
     interpretation,
     description,
   };
@@ -197,7 +210,7 @@ export function scoreMarginOfSafety(marginOfSafety: number | null): MetricScore 
 
 /**
  * Score Payout Ratio
- * Weight: 10%
+ * Weight: Equal (~14.29%)
  * 30% - 50%: +2 (balanced)
  * 50% - 70%: +1 (generous but sustainable)
  * < 30% or > 70%: 0 (either too conservative or potentially unsustainable)
@@ -229,12 +242,12 @@ export function scorePayoutRatio(payoutRatio: number): MetricScore {
     description = "High payout - may not be sustainable long-term";
   }
 
-  return { value: payoutRatio, score, weight: 10, interpretation, description };
+  return { value: payoutRatio, score, weight: EQUAL_WEIGHT, interpretation, description };
 }
 
 /**
  * Score Earnings Yield vs T-Bill Rate
- * Weight: 5%
+ * Weight: Equal (~14.29%)
  * > 1.5x T-bill: +2 (attractive)
  * 1.0x - 1.5x T-bill: +1 (reasonable)
  * < 1.0x T-bill: -1 (unattractive - bonds may be better)
@@ -272,7 +285,7 @@ export function scoreEarningsYieldVsTBill(
   return {
     value: earningsYield,
     score,
-    weight: 5,
+    weight: EQUAL_WEIGHT,
     interpretation,
     description,
   };

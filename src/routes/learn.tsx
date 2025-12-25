@@ -766,44 +766,97 @@ function LearnPage() {
             <Badge variant="secondary">How We Calculate the Verdict</Badge>
           </div>
 
-          <Card className="border-l-4 border-l-green-500">
+          <Card className="border-l-4 border-l-green-500 mb-4">
             <CardContent className="pt-6 space-y-4">
               <p className="text-muted-foreground">
                 Our calculator combines multiple metrics into a single score to give you an overall
-                recommendation. Here's how it works:
+                recommendation. Here&apos;s how it works:
               </p>
 
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-sm mb-2">Metrics Used in Scoring</p>
+                  <p className="text-xs text-muted-foreground mb-2">Each metric has equal weight (~14.3%)</p>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• P/B Ratio (15% weight)</li>
-                    <li>• P/E Ratio (20% weight)</li>
-                    <li>• Dividend Yield (15% weight)</li>
-                    <li>• ROE (15% weight)</li>
-                    <li>• Margin of Safety (15% weight)</li>
-                    <li>• Payout Ratio (10% weight)</li>
-                    <li>• Earnings Yield vs T-Bill (10% weight)</li>
+                    <li>• P/B Ratio</li>
+                    <li>• P/E Ratio</li>
+                    <li>• Dividend Yield</li>
+                    <li>• ROE</li>
+                    <li>• Margin of Safety</li>
+                    <li>• Payout Ratio</li>
+                    <li>• Earnings Yield vs T-Bill</li>
                   </ul>
                 </div>
 
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-sm mb-2">Verdict Scale</p>
                   <ul className="text-xs space-y-1">
-                    <li className="text-green-600">• STRONG BUY: Score ≥ 1.0</li>
-                    <li className="text-green-500">• BUY: Score 0.5 to 1.0</li>
+                    <li className="text-green-600">• STRONG BUY: Score &gt; 1.5</li>
+                    <li className="text-green-500">• BUY: Score 0.5 to 1.5</li>
                     <li className="text-amber-500">• HOLD: Score -0.5 to 0.5</li>
-                    <li className="text-orange-500">• SELL: Score -1.0 to -0.5</li>
-                    <li className="text-red-500">• STRONG SELL: Score &lt; -1.0</li>
+                    <li className="text-orange-500">• SELL: Score -1.5 to -0.5</li>
+                    <li className="text-red-500">• STRONG SELL: Score &lt; -1.5</li>
                   </ul>
                 </div>
               </div>
 
               <p className="text-sm text-muted-foreground">
-                Each metric is scored from -2 (very negative) to +2 (very positive), then weighted
-                and combined. The final score guides the recommendation, but always use your own
-                judgment and consider factors the model doesn't capture.
+                Each metric is scored from -2 (very negative) to +2 (very positive), then averaged.
+                The final score guides the recommendation, but always use your own judgment and
+                consider factors the model doesn&apos;t capture.
               </p>
+            </CardContent>
+          </Card>
+
+          {/* Methodology Transparency */}
+          <Card className="border-l-4 border-l-amber-500">
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-amber-500" />
+                <p className="font-semibold text-foreground">Methodology Transparency</p>
+              </div>
+
+              <div className="space-y-3 text-sm">
+                <div className="bg-amber-50 p-3 rounded-lg">
+                  <p className="font-medium text-amber-800 mb-2">Why Equal Weighting?</p>
+                  <p className="text-muted-foreground">
+                    We use equal weights for all metrics (~14.3% each) because academic research shows
+                    that equal-weighted portfolios often perform as well as, or better than, portfolios
+                    with optimized weights. This approach is also more robust and easier to understand.
+                  </p>
+                  <p className="text-xs text-amber-600 mt-2">
+                    Reference: DeMiguel et al. (2009) &quot;Optimal Versus Naive Diversification&quot;
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 p-3 rounded-lg">
+                  <p className="font-medium text-foreground mb-2">What This Scoring System Is</p>
+                  <ul className="text-muted-foreground space-y-1 list-disc list-inside">
+                    <li>A framework for analyzing stocks across multiple dimensions</li>
+                    <li>Based on well-established value investing principles</li>
+                    <li>A starting point for your own research, not a final answer</li>
+                  </ul>
+                </div>
+
+                <div className="bg-red-50 p-3 rounded-lg">
+                  <p className="font-medium text-red-800 mb-2">What This Scoring System Is NOT</p>
+                  <ul className="text-red-700 space-y-1 list-disc list-inside text-xs">
+                    <li>Not backtested against historical NSE stock returns</li>
+                    <li>Not validated by comparing predictions to actual performance</li>
+                    <li>Not comparable to professional scoring systems like Piotroski F-Score or Altman Z-Score which were empirically derived</li>
+                    <li>Not a guarantee of future performance</li>
+                  </ul>
+                </div>
+
+                <div className="bg-blue-50 p-3 rounded-lg">
+                  <p className="font-medium text-blue-800 mb-2">Professional Scoring Systems (For Reference)</p>
+                  <p className="text-muted-foreground text-xs">
+                    Professional systems like the <strong>Piotroski F-Score</strong> (9-point scale, academically validated)
+                    and <strong>Altman Z-Score</strong> (bankruptcy prediction) use weights derived from statistical analysis
+                    of actual outcomes. Note: These systems often don&apos;t work for banks due to different accounting structures.
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>

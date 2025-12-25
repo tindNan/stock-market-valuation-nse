@@ -65,6 +65,7 @@ export default function DisclaimerModal() {
               <li>Valuation models have inherent limitations</li>
               <li>Market conditions can change rapidly</li>
               <li>This tool does not consider all risk factors</li>
+              <li>The scoring system has not been backtested against NSE stock returns</li>
             </ul>
           </div>
 
