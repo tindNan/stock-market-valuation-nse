@@ -96,6 +96,7 @@ export interface ScoringResult {
     marginOfSafety: MetricScore;
     payoutRatio: MetricScore;
     earningsYieldVsTBill: MetricScore;
+    debtToEquity: MetricScore;
   };
   totalWeightedScore: number;
   verdict: VerdictType;

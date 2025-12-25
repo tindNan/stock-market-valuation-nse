@@ -2,7 +2,7 @@ import type { ValuationMetrics, Sector, MetricScore, ScoringResult, VerdictType 
 import { VERDICT_COLORS } from "@/types";
 
 /**
- * Equal weight for all metrics (~14.29% each)
+ * Equal weight for all metrics (12.5% each for 8 metrics)
  *
  * We use equal weighting because:
  * 1. Academic research shows equal weights often perform as well as optimized weights
@@ -12,11 +12,11 @@ import { VERDICT_COLORS } from "@/types";
  * Reference: DeMiguel, V., Garlappi, L., & Uppal, R. (2009). "Optimal Versus Naive
  * Diversification: How Inefficient is the 1/N Portfolio Strategy?"
  */
-const EQUAL_WEIGHT = 14.29;
+const EQUAL_WEIGHT = 12.5;
 
 /**
  * Score P/B Ratio
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * < 1.0: +2 (undervalued)
  * 1.0 - 1.5: +1 (fairly valued)
  * 1.5 - 2.0: 0 (slight premium)
@@ -54,7 +54,7 @@ export function scorePBRatio(pbRatio: number): MetricScore {
 
 /**
  * Score P/E Ratio
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * < 8: +2 (cheap)
  * 8 - 12: +1 (reasonable)
  * 12 - 18: 0 (fairly valued)
@@ -92,7 +92,7 @@ export function scorePERatio(peRatio: number): MetricScore {
 
 /**
  * Score Dividend Yield
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * > 7%: +2 (high yield)
  * 5% - 7%: +1 (good yield)
  * 2% - 5%: 0 (moderate)
@@ -132,7 +132,7 @@ export function scoreDividendYield(dividendYield: number): MetricScore {
 
 /**
  * Score ROE (Return on Equity)
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * > 20%: +2 (excellent)
  * 15% - 20%: +1 (good)
  * 10% - 15%: 0 (acceptable)
@@ -166,7 +166,7 @@ export function scoreROE(roe: number): MetricScore {
 
 /**
  * Score Margin of Safety
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * > 30%: +2 (excellent value)
  * 15% - 30%: +1 (good buying opportunity)
  * 0% - 15%: 0 (fairly valued)
@@ -210,7 +210,7 @@ export function scoreMarginOfSafety(marginOfSafety: number | null): MetricScore 
 
 /**
  * Score Payout Ratio
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * 30% - 50%: +2 (balanced)
  * 50% - 70%: +1 (generous but sustainable)
  * < 30% or > 70%: 0 (either too conservative or potentially unsustainable)
@@ -247,7 +247,7 @@ export function scorePayoutRatio(payoutRatio: number): MetricScore {
 
 /**
  * Score Earnings Yield vs T-Bill Rate
- * Weight: Equal (~14.29%)
+ * Weight: Equal (12.5%)
  * > 1.5x T-bill: +2 (attractive)
  * 1.0x - 1.5x T-bill: +1 (reasonable)
  * < 1.0x T-bill: -1 (unattractive - bonds may be better)
@@ -289,6 +289,74 @@ export function scoreEarningsYieldVsTBill(
     interpretation,
     description,
   };
+}
+
+/**
+ * Score Debt-to-Equity Ratio
+ * Weight: Equal (12.5%)
+ *
+ * Based on Graham's emphasis on financial strength and Buffett's preference for low debt.
+ *
+ * For NON-BANKS:
+ * < 0.5: +2 (conservative - Buffett's preference)
+ * 0.5 - 1.0: +1 (moderate leverage)
+ * 1.0 - 2.0: 0 (leveraged but manageable)
+ * > 2.0: -1 (high financial risk)
+ *
+ * For BANKS:
+ * < 5: +2 (conservative for banking)
+ * 5 - 8: +1 (typical for banks)
+ * 8 - 12: 0 (leveraged but within norms)
+ * > 12: -1 (high leverage even for banks)
+ *
+ * NOTE: Banks naturally have high D/E (5-10x) due to deposits being liabilities.
+ */
+export function scoreDebtToEquity(debtToEquity: number, sector: Sector): MetricScore {
+  let score: number;
+  let interpretation: MetricScore["interpretation"];
+  let description: string;
+
+  if (sector === "BANK") {
+    // Bank-specific thresholds (higher D/E is normal)
+    if (debtToEquity < 5) {
+      score = 2;
+      interpretation = "positive";
+      description = "Conservative leverage for a bank";
+    } else if (debtToEquity < 8) {
+      score = 1;
+      interpretation = "positive";
+      description = "Typical leverage for banking sector";
+    } else if (debtToEquity < 12) {
+      score = 0;
+      interpretation = "neutral";
+      description = "High but within banking norms";
+    } else {
+      score = -1;
+      interpretation = "negative";
+      description = "Very high leverage even for a bank";
+    }
+  } else {
+    // Non-bank thresholds (based on Buffett's preference for D/E < 0.5)
+    if (debtToEquity < 0.5) {
+      score = 2;
+      interpretation = "positive";
+      description = "Conservative - low financial risk (Buffett's preference)";
+    } else if (debtToEquity < 1.0) {
+      score = 1;
+      interpretation = "positive";
+      description = "Moderate leverage - balanced approach";
+    } else if (debtToEquity < 2.0) {
+      score = 0;
+      interpretation = "neutral";
+      description = "Leveraged but manageable";
+    } else {
+      score = -1;
+      interpretation = "negative";
+      description = "High leverage - significant financial risk";
+    }
+  }
+
+  return { value: debtToEquity, score, weight: EQUAL_WEIGHT, interpretation, description };
 }
 
 /**
@@ -339,7 +407,7 @@ export function getVerdictText(verdict: VerdictType): string {
 export function calculateScoring(
   metrics: ValuationMetrics,
   riskFreeRate: number,
-  _sector: Sector, // For future sector-specific adjustments
+  sector: Sector,
 ): ScoringResult {
   const scores = {
     pbRatio: scorePBRatio(metrics.pbRatio),
@@ -349,6 +417,7 @@ export function calculateScoring(
     marginOfSafety: scoreMarginOfSafety(metrics.marginOfSafety),
     payoutRatio: scorePayoutRatio(metrics.payoutRatio),
     earningsYieldVsTBill: scoreEarningsYieldVsTBill(metrics.earningsYield, riskFreeRate),
+    debtToEquity: scoreDebtToEquity(metrics.debtToEquity, sector),
   };
 
   const totalWeightedScore = calculateWeightedScore(scores);

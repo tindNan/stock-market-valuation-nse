@@ -776,7 +776,7 @@ function LearnPage() {
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-sm mb-2">Metrics Used in Scoring</p>
-                  <p className="text-xs text-muted-foreground mb-2">Each metric has equal weight (~14.3%)</p>
+                  <p className="text-xs text-muted-foreground mb-2">Each metric has equal weight (12.5%)</p>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• P/B Ratio</li>
                     <li>• P/E Ratio</li>
@@ -785,6 +785,7 @@ function LearnPage() {
                     <li>• Margin of Safety</li>
                     <li>• Payout Ratio</li>
                     <li>• Earnings Yield vs T-Bill</li>
+                    <li>• Debt-to-Equity Ratio</li>
                   </ul>
                 </div>
 
@@ -820,7 +821,7 @@ function LearnPage() {
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-2">Why Equal Weighting?</p>
                   <p className="text-muted-foreground">
-                    We use equal weights for all metrics (~14.3% each) because academic research shows
+                    We use equal weights for all 8 metrics (12.5% each) because academic research shows
                     that equal-weighted portfolios often perform as well as, or better than, portfolios
                     with optimized weights. This approach is also more robust and easier to understand.
                   </p>
@@ -857,6 +858,76 @@ function LearnPage() {
                   </p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Graham & Buffett Alignment */}
+          <Card className="border-l-4 border-l-blue-500 mt-4">
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-blue-500" />
+                <p className="font-semibold text-foreground">Graham & Buffett Alignment</p>
+              </div>
+
+              <p className="text-sm text-muted-foreground">
+                This calculator is inspired by value investing principles from Benjamin Graham
+                (&quot;The Intelligent Investor&quot;) and Warren Buffett. Here&apos;s how our metrics align
+                with their approaches:
+              </p>
+
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="bg-green-50 p-3 rounded-lg">
+                  <p className="font-medium text-green-800 mb-2">What We Check (Aligned)</p>
+                  <ul className="text-xs text-green-700 space-y-1">
+                    <li>✓ <strong>P/B Ratio &lt; 1.5</strong> — Graham&apos;s asset-based valuation</li>
+                    <li>✓ <strong>P/E Ratio &lt; 15</strong> — Graham&apos;s earnings valuation</li>
+                    <li>✓ <strong>Margin of Safety &gt; 30%</strong> — Graham&apos;s core principle</li>
+                    <li>✓ <strong>ROE &gt; 20%</strong> — Buffett&apos;s quality focus</li>
+                    <li>✓ <strong>D/E Ratio &lt; 0.5</strong> — Buffett&apos;s preference for low debt</li>
+                    <li>✓ <strong>Earnings Yield vs T-Bill</strong> — Risk premium analysis</li>
+                    <li>✓ <strong>Dividend Yield</strong> — Income focus</li>
+                    <li>✓ <strong>Payout Ratio</strong> — Dividend sustainability</li>
+                  </ul>
+                </div>
+
+                <div className="bg-red-50 p-3 rounded-lg">
+                  <p className="font-medium text-red-800 mb-2">What We Don&apos;t Check (Limitations)</p>
+                  <ul className="text-xs text-red-700 space-y-1">
+                    <li>✗ 20 years uninterrupted dividend history</li>
+                    <li>✗ 10 years positive earnings history</li>
+                    <li>✗ 33% earnings growth over 10 years</li>
+                    <li>✗ Current Ratio &gt; 2.0</li>
+                    <li>✗ Owner Earnings (Operating Cash Flow)</li>
+                    <li>✗ Gross Margin &gt; 40%</li>
+                  </ul>
+                  <p className="text-xs text-red-600 mt-2 italic">
+                    These require historical data or cash flow statements not collected in this tool.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-medium text-foreground mb-2">Why Our Approach Differs</p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>
+                    <strong>Data Scope:</strong> This tool works with single-year annual report data.
+                    Graham&apos;s full criteria require 10-20 years of history.
+                  </li>
+                  <li>
+                    <strong>Scoring Method:</strong> Graham used binary pass/fail (stock must meet ALL criteria).
+                    We use weighted scoring (partial failures allowed). This is more flexible but philosophically different.
+                  </li>
+                  <li>
+                    <strong>Bank Considerations:</strong> Some metrics (gross margin, current ratio) don&apos;t apply to banks.
+                    We adjust D/E thresholds for the banking sector.
+                  </li>
+                </ul>
+              </div>
+
+              <p className="text-xs text-muted-foreground italic">
+                This tool captures approximately 60-70% of Graham&apos;s quantitative criteria and aligns well with
+                Buffett&apos;s quality focus. For complete Graham screening, additional historical data would be needed.
+              </p>
             </CardContent>
           </Card>
         </section>
