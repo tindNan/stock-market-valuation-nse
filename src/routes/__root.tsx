@@ -1,4 +1,5 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -57,6 +58,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <main className="flex-1 bg-slate-50">{children}</main>
           <Footer />
           <DisclaimerModal />
+          <Analytics />
         </ValuationProvider>
         <Scripts />
       </body>
