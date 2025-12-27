@@ -45,8 +45,8 @@ function LearnPage() {
           Understanding Stock Valuation Metrics
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          A beginner-friendly guide to the financial metrics used in this calculator.
-          Learn what each number means and how to interpret it for smarter investment decisions.
+          A beginner-friendly guide to the financial metrics used in this calculator. Learn what
+          each number means and how to interpret it for smarter investment decisions.
         </p>
       </div>
 
@@ -60,14 +60,15 @@ function LearnPage() {
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground space-y-2">
           <p>
-            <strong className="text-foreground">Stock valuation</strong> is the process of determining
-            whether a stock is worth buying at its current price. Think of it like checking if a house
-            is priced fairly before you buy it.
+            <strong className="text-foreground">Stock valuation</strong> is the process of
+            determining whether a stock is worth buying at its current price. Think of it like
+            checking if a house is priced fairly before you buy it.
           </p>
           <p>
-            This calculator uses <strong className="text-foreground">14 different metrics</strong> to
-            analyze a stock from multiple angles: its value, profitability, income potential, and risk level.
-            No single metric tells the whole story — they work together to give you a complete picture.
+            This calculator uses <strong className="text-foreground">14 different metrics</strong>{" "}
+            to analyze a stock from multiple angles: its value, profitability, income potential, and
+            risk level. No single metric tells the whole story — they work together to give you a
+            complete picture.
           </p>
         </CardContent>
       </Card>
@@ -90,7 +91,9 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Book Value Per Share (BVPS)</span>
-                  <Badge variant="outline" className="text-xs">Foundation</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Foundation
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
@@ -98,8 +101,8 @@ function LearnPage() {
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
                     Book Value Per Share tells you how much each share would be worth if the company
-                    sold all its assets and paid off all its debts today. It's like the "floor price"
-                    of a share.
+                    sold all its assets and paid off all its debts today. It's like the "floor
+                    price" of a share.
                   </p>
                 </div>
 
@@ -122,8 +125,9 @@ function LearnPage() {
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Example</p>
                   <p className="text-muted-foreground">
-                    If a company has KES 10 billion in equity and 1 billion shares, the BVPS is KES 10.
-                    If the stock trades at KES 8, you're buying KES 10 worth of assets for KES 8.
+                    If a company has KES 10 billion in equity and 1 billion shares, the BVPS is KES
+                    10. If the stock trades at KES 8, you're buying KES 10 worth of assets for KES
+                    8.
                   </p>
                 </div>
               </AccordionContent>
@@ -133,15 +137,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Price-to-Book Ratio (P/B)</span>
-                  <Badge variant="outline" className="text-xs">Key Indicator</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Key Indicator
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The P/B ratio compares what you're paying for a stock to what the company's assets
-                    are actually worth. It answers: "Am I paying a premium or getting a discount?"
+                    The P/B ratio compares what you're paying for a stock to what the company's
+                    assets are actually worth. It answers: "Am I paying a premium or getting a
+                    discount?"
                   </p>
                 </div>
 
@@ -155,17 +162,26 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>P/B &lt; 1.0:</strong> Stock may be undervalued (trading below asset value)</li>
-                    <li><strong>P/B = 1.0-1.5:</strong> Fairly valued</li>
-                    <li><strong>P/B &gt; 2.0:</strong> May be expensive, but could be justified by growth</li>
+                    <li>
+                      <strong>P/B &lt; 1.0:</strong> Stock may be undervalued (trading below asset
+                      value)
+                    </li>
+                    <li>
+                      <strong>P/B = 1.0-1.5:</strong> Fairly valued
+                    </li>
+                    <li>
+                      <strong>P/B &gt; 2.0:</strong> May be expensive, but could be justified by
+                      growth
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Important Note</p>
                   <p className="text-muted-foreground">
-                    Banks typically have P/B ratios close to 1.0. Tech companies often have higher P/B
-                    ratios because their value comes from intangible assets like software and brands.
+                    Banks typically have P/B ratios close to 1.0. Tech companies often have higher
+                    P/B ratios because their value comes from intangible assets like software and
+                    brands.
                   </p>
                 </div>
               </AccordionContent>
@@ -175,16 +191,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Earnings Per Share (EPS)</span>
-                  <Badge variant="outline" className="text-xs">Foundation</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Foundation
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    EPS tells you how much profit the company made for each share you own. It's one of
-                    the most important numbers in investing because it shows how profitable the company
-                    is on a per-share basis.
+                    EPS tells you how much profit the company made for each share you own. It's one
+                    of the most important numbers in investing because it shows how profitable the
+                    company is on a per-share basis.
                   </p>
                 </div>
 
@@ -207,8 +225,8 @@ function LearnPage() {
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Example</p>
                   <p className="text-muted-foreground">
-                    If a company made KES 5 billion profit with 1 billion shares, EPS = KES 5.
-                    This means each share you own "earned" KES 5 last year.
+                    If a company made KES 5 billion profit with 1 billion shares, EPS = KES 5. This
+                    means each share you own "earned" KES 5 last year.
                   </p>
                 </div>
               </AccordionContent>
@@ -218,15 +236,17 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Price-to-Earnings Ratio (P/E)</span>
-                  <Badge variant="outline" className="text-xs">Most Popular</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Most Popular
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The P/E ratio tells you how many years of earnings you're paying for when you buy
-                    a stock. It's the most commonly used valuation metric in the world.
+                    The P/E ratio tells you how many years of earnings you're paying for when you
+                    buy a stock. It's the most commonly used valuation metric in the world.
                   </p>
                 </div>
 
@@ -240,18 +260,32 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>Low P/E (5-10):</strong> Stock may be undervalued or company has problems</li>
-                    <li><strong>Medium P/E (10-20):</strong> Fairly valued for most companies</li>
-                    <li><strong>High P/E (20+):</strong> Investors expect high growth, or stock is overvalued</li>
+                    <li>
+                      <strong>Low P/E (5-10):</strong> Stock may be undervalued or company has
+                      problems
+                    </li>
+                    <li>
+                      <strong>Medium P/E (10-20):</strong> Fairly valued for most companies
+                    </li>
+                    <li>
+                      <strong>High P/E (20+):</strong> Investors expect high growth, or stock is
+                      overvalued
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Sector Benchmarks for NSE</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>Banks:</strong> 4-8x is typical</li>
-                    <li><strong>Telecoms:</strong> 8-15x is typical</li>
-                    <li><strong>Manufacturing:</strong> 6-12x is typical</li>
+                    <li>
+                      <strong>Banks:</strong> 4-8x is typical
+                    </li>
+                    <li>
+                      <strong>Telecoms:</strong> 8-15x is typical
+                    </li>
+                    <li>
+                      <strong>Manufacturing:</strong> 6-12x is typical
+                    </li>
                   </ul>
                 </div>
               </AccordionContent>
@@ -269,7 +303,8 @@ function LearnPage() {
             <Badge variant="secondary">Dividend Focus</Badge>
           </div>
           <p className="text-muted-foreground mb-4">
-            These metrics help you understand how much cash income you can expect from owning the stock.
+            These metrics help you understand how much cash income you can expect from owning the
+            stock.
           </p>
 
           <Accordion type="multiple" className="space-y-2">
@@ -277,15 +312,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Dividend Yield</span>
-                  <Badge variant="outline" className="text-xs">Income Key</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Income Key
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    Dividend yield shows the annual cash return you get from dividends as a percentage
-                    of your investment. It's like the "interest rate" on your stock investment.
+                    Dividend yield shows the annual cash return you get from dividends as a
+                    percentage of your investment. It's like the "interest rate" on your stock
+                    investment.
                   </p>
                 </div>
 
@@ -299,18 +337,27 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&lt; 2%:</strong> Low yield (growth-focused companies)</li>
-                    <li><strong>2-5%:</strong> Moderate yield (balanced companies)</li>
-                    <li><strong>5-10%:</strong> High yield (income-focused investments)</li>
-                    <li><strong>&gt; 10%:</strong> Very high — check if it's sustainable!</li>
+                    <li>
+                      <strong>&lt; 2%:</strong> Low yield (growth-focused companies)
+                    </li>
+                    <li>
+                      <strong>2-5%:</strong> Moderate yield (balanced companies)
+                    </li>
+                    <li>
+                      <strong>5-10%:</strong> High yield (income-focused investments)
+                    </li>
+                    <li>
+                      <strong>&gt; 10%:</strong> Very high — check if it's sustainable!
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Compare To</p>
                   <p className="text-muted-foreground">
-                    In Kenya, compare dividend yields to: Bank savings (4-6%), Treasury bills (10-12%).
-                    A stock's yield should compensate for the extra risk of owning equities.
+                    In Kenya, compare dividend yields to: Bank savings (4-6%), Treasury bills
+                    (10-12%). A stock's yield should compensate for the extra risk of owning
+                    equities.
                   </p>
                 </div>
               </AccordionContent>
@@ -320,15 +367,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Dividend Payout Ratio</span>
-                  <Badge variant="outline" className="text-xs">Sustainability Check</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Sustainability Check
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The payout ratio shows what percentage of profits the company pays out as dividends.
-                    It helps you understand if dividends are sustainable or at risk of being cut.
+                    The payout ratio shows what percentage of profits the company pays out as
+                    dividends. It helps you understand if dividends are sustainable or at risk of
+                    being cut.
                   </p>
                 </div>
 
@@ -342,18 +392,26 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&lt; 30%:</strong> Conservative — company is reinvesting most profits</li>
-                    <li><strong>30-50%:</strong> Balanced — healthy mix of dividends and reinvestment</li>
-                    <li><strong>50-70%:</strong> High payout — good for income investors</li>
-                    <li><strong>&gt; 70%:</strong> Very high — may not be sustainable long-term</li>
+                    <li>
+                      <strong>&lt; 30%:</strong> Conservative — company is reinvesting most profits
+                    </li>
+                    <li>
+                      <strong>30-50%:</strong> Balanced — healthy mix of dividends and reinvestment
+                    </li>
+                    <li>
+                      <strong>50-70%:</strong> High payout — good for income investors
+                    </li>
+                    <li>
+                      <strong>&gt; 70%:</strong> Very high — may not be sustainable long-term
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-red-50 p-3 rounded-lg">
                   <p className="font-medium text-red-800 mb-1">Warning</p>
                   <p className="text-muted-foreground">
-                    A payout ratio over 100% means the company is paying more in dividends than it earns.
-                    This is unsustainable and dividends will likely be cut in the future.
+                    A payout ratio over 100% means the company is paying more in dividends than it
+                    earns. This is unsustainable and dividends will likely be cut in the future.
                   </p>
                 </div>
               </AccordionContent>
@@ -363,15 +421,17 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Earnings Yield</span>
-                  <Badge variant="outline" className="text-xs">Value Comparison</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Value Comparison
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    Earnings yield is the inverse of the P/E ratio, expressed as a percentage. It shows
-                    the return on your investment if all earnings were paid out.
+                    Earnings yield is the inverse of the P/E ratio, expressed as a percentage. It
+                    shows the return on your investment if all earnings were paid out.
                   </p>
                 </div>
 
@@ -385,8 +445,9 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <p className="text-muted-foreground">
-                    Compare earnings yield to the Treasury bill rate (risk-free rate). If the earnings
-                    yield is significantly higher than T-bills, the stock may be attractively valued.
+                    Compare earnings yield to the Treasury bill rate (risk-free rate). If the
+                    earnings yield is significantly higher than T-bills, the stock may be
+                    attractively valued.
                   </p>
                 </div>
 
@@ -394,7 +455,8 @@ function LearnPage() {
                   <p className="font-medium text-amber-800 mb-1">Example</p>
                   <p className="text-muted-foreground">
                     If a stock has an earnings yield of 15% and T-bills pay 10%, you're getting an
-                    extra 5% return for taking on stock market risk. Is that enough compensation for you?
+                    extra 5% return for taking on stock market risk. Is that enough compensation for
+                    you?
                   </p>
                 </div>
               </AccordionContent>
@@ -404,15 +466,17 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Dividend Growth Rate</span>
-                  <Badge variant="outline" className="text-xs">Trend Indicator</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Trend Indicator
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    This shows how much the dividend has grown compared to last year. Growing dividends
-                    are a sign of a healthy, profitable company.
+                    This shows how much the dividend has grown compared to last year. Growing
+                    dividends are a sign of a healthy, profitable company.
                   </p>
                 </div>
 
@@ -426,9 +490,16 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>Positive growth:</strong> Good sign — company is increasing shareholder returns</li>
-                    <li><strong>0% growth:</strong> Stable but not growing</li>
-                    <li><strong>Negative growth:</strong> Warning sign — company may be struggling</li>
+                    <li>
+                      <strong>Positive growth:</strong> Good sign — company is increasing
+                      shareholder returns
+                    </li>
+                    <li>
+                      <strong>0% growth:</strong> Stable but not growing
+                    </li>
+                    <li>
+                      <strong>Negative growth:</strong> Warning sign — company may be struggling
+                    </li>
                   </ul>
                 </div>
               </AccordionContent>
@@ -454,15 +525,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Return on Equity (ROE)</span>
-                  <Badge variant="outline" className="text-xs">Key Metric</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Key Metric
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    ROE measures how much profit a company generates with the money shareholders have
-                    invested. It's one of the most important metrics for judging management effectiveness.
+                    ROE measures how much profit a company generates with the money shareholders
+                    have invested. It's one of the most important metrics for judging management
+                    effectiveness.
                   </p>
                 </div>
 
@@ -476,18 +550,28 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&lt; 10%:</strong> Below average — company isn't using capital efficiently</li>
-                    <li><strong>10-15%:</strong> Average performance</li>
-                    <li><strong>15-20%:</strong> Good — company is generating solid returns</li>
-                    <li><strong>&gt; 20%:</strong> Excellent — company is highly profitable</li>
+                    <li>
+                      <strong>&lt; 10%:</strong> Below average — company isn't using capital
+                      efficiently
+                    </li>
+                    <li>
+                      <strong>10-15%:</strong> Average performance
+                    </li>
+                    <li>
+                      <strong>15-20%:</strong> Good — company is generating solid returns
+                    </li>
+                    <li>
+                      <strong>&gt; 20%:</strong> Excellent — company is highly profitable
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Why It Matters</p>
                   <p className="text-muted-foreground">
-                    A company with 20% ROE is making KES 20 in profit for every KES 100 of shareholder
-                    investment. Over time, high ROE companies tend to grow faster and create more value.
+                    A company with 20% ROE is making KES 20 in profit for every KES 100 of
+                    shareholder investment. Over time, high ROE companies tend to grow faster and
+                    create more value.
                   </p>
                 </div>
               </AccordionContent>
@@ -497,7 +581,9 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Return on Assets (ROA)</span>
-                  <Badge variant="outline" className="text-xs">Asset Efficiency</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Asset Efficiency
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
@@ -519,13 +605,17 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <div className="space-y-2">
-                    <p className="text-muted-foreground"><strong>For Banks:</strong></p>
+                    <p className="text-muted-foreground">
+                      <strong>For Banks:</strong>
+                    </p>
                     <ul className="text-muted-foreground list-disc list-inside ml-4">
                       <li>&gt; 3%: Excellent</li>
                       <li>2-3%: Good</li>
                       <li>&lt; 1%: Poor</li>
                     </ul>
-                    <p className="text-muted-foreground"><strong>For Non-Banks:</strong></p>
+                    <p className="text-muted-foreground">
+                      <strong>For Non-Banks:</strong>
+                    </p>
                     <ul className="text-muted-foreground list-disc list-inside ml-4">
                       <li>&gt; 10%: Excellent</li>
                       <li>5-10%: Good</li>
@@ -564,15 +654,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Debt-to-Equity Ratio (D/E)</span>
-                  <Badge variant="outline" className="text-xs">Leverage</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Leverage
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The D/E ratio shows how much the company has borrowed compared to what shareholders
-                    have invested. High debt means higher risk but potentially higher returns.
+                    The D/E ratio shows how much the company has borrowed compared to what
+                    shareholders have invested. High debt means higher risk but potentially higher
+                    returns.
                   </p>
                 </div>
 
@@ -586,10 +679,19 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it (Non-Banks)</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&lt; 0.5:</strong> Conservative — low risk, but may be under-leveraged</li>
-                    <li><strong>0.5-1.0:</strong> Moderate — balanced approach to financing</li>
-                    <li><strong>1.0-2.0:</strong> Leveraged — higher risk, could amplify returns or losses</li>
-                    <li><strong>&gt; 2.0:</strong> Highly leveraged — significant financial risk</li>
+                    <li>
+                      <strong>&lt; 0.5:</strong> Conservative — low risk, but may be under-leveraged
+                    </li>
+                    <li>
+                      <strong>0.5-1.0:</strong> Moderate — balanced approach to financing
+                    </li>
+                    <li>
+                      <strong>1.0-2.0:</strong> Leveraged — higher risk, could amplify returns or
+                      losses
+                    </li>
+                    <li>
+                      <strong>&gt; 2.0:</strong> Highly leveraged — significant financial risk
+                    </li>
                   </ul>
                 </div>
 
@@ -616,7 +718,8 @@ function LearnPage() {
             <Badge variant="secondary">Fair Value</Badge>
           </div>
           <p className="text-muted-foreground mb-4">
-            These metrics estimate what the stock should actually be worth, regardless of its current price.
+            These metrics estimate what the stock should actually be worth, regardless of its
+            current price.
           </p>
 
           <Accordion type="multiple" className="space-y-2">
@@ -624,35 +727,45 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Intrinsic Value (Gordon Growth Model)</span>
-                  <Badge variant="outline" className="text-xs">Core Valuation</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Core Valuation
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The intrinsic value is an estimate of what a stock is "really worth" based on its
-                    future dividend payments. It uses the Dividend Discount Model (DDM), also called
-                    the Gordon Growth Model.
+                    The intrinsic value is an estimate of what a stock is "really worth" based on
+                    its future dividend payments. It uses the Dividend Discount Model (DDM), also
+                    called the Gordon Growth Model.
                   </p>
                 </div>
 
                 <div className="bg-blue-50 p-3 rounded-lg">
                   <p className="font-medium text-blue-800 mb-1">Formula</p>
-                  <p className="font-mono text-sm text-blue-600">
-                    Intrinsic Value = D₁ ÷ (r - g)
-                  </p>
+                  <p className="font-mono text-sm text-blue-600">Intrinsic Value = D₁ ÷ (r - g)</p>
                   <p className="text-xs text-blue-600 mt-1">
-                    Where: D₁ = Next year's expected dividend, r = Required return, g = Expected growth rate
+                    Where: D₁ = Next year's expected dividend, r = Required return, g = Expected
+                    growth rate
                   </p>
                 </div>
 
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>Stock price &lt; Intrinsic value:</strong> Stock may be undervalued (potential buy)</li>
-                    <li><strong>Stock price &gt; Intrinsic value:</strong> Stock may be overvalued (potential sell)</li>
-                    <li><strong>N/A:</strong> Company doesn't pay dividends, so this model doesn't apply</li>
+                    <li>
+                      <strong>Stock price &lt; Intrinsic value:</strong> Stock may be undervalued
+                      (potential buy)
+                    </li>
+                    <li>
+                      <strong>Stock price &gt; Intrinsic value:</strong> Stock may be overvalued
+                      (potential sell)
+                    </li>
+                    <li>
+                      <strong>N/A:</strong> Company doesn't pay dividends, so this model doesn't
+                      apply
+                    </li>
                   </ul>
                 </div>
 
@@ -670,16 +783,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">Margin of Safety</span>
-                  <Badge variant="outline" className="text-xs">Risk Buffer</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Risk Buffer
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The margin of safety is the difference between the intrinsic value and the current
-                    stock price. It acts as a buffer against errors in your analysis. This concept was
-                    popularized by legendary investor Benjamin Graham.
+                    The margin of safety is the difference between the intrinsic value and the
+                    current stock price. It acts as a buffer against errors in your analysis. This
+                    concept was popularized by legendary investor Benjamin Graham.
                   </p>
                 </div>
 
@@ -693,10 +808,19 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&gt; 30%:</strong> Excellent value — significant buffer against errors</li>
-                    <li><strong>15-30%:</strong> Good value — reasonable safety cushion</li>
-                    <li><strong>0-15%:</strong> Fairly valued — limited upside protection</li>
-                    <li><strong>&lt; 0% (negative):</strong> Overvalued — stock is priced above fair value</li>
+                    <li>
+                      <strong>&gt; 30%:</strong> Excellent value — significant buffer against errors
+                    </li>
+                    <li>
+                      <strong>15-30%:</strong> Good value — reasonable safety cushion
+                    </li>
+                    <li>
+                      <strong>0-15%:</strong> Fairly valued — limited upside protection
+                    </li>
+                    <li>
+                      <strong>&lt; 0% (negative):</strong> Overvalued — stock is priced above fair
+                      value
+                    </li>
                   </ul>
                 </div>
 
@@ -704,7 +828,8 @@ function LearnPage() {
                   <p className="font-medium text-amber-800 mb-1">Benjamin Graham's Rule</p>
                   <p className="text-muted-foreground">
                     Graham recommended only buying stocks with at least a 30% margin of safety. This
-                    protects you if your analysis is wrong or if market conditions change unexpectedly.
+                    protects you if your analysis is wrong or if market conditions change
+                    unexpectedly.
                   </p>
                 </div>
               </AccordionContent>
@@ -714,16 +839,18 @@ function LearnPage() {
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-3">
                   <span className="font-medium">PEG Ratio</span>
-                  <Badge variant="outline" className="text-xs">Growth-Adjusted</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    Growth-Adjusted
+                  </Badge>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm space-y-3 pb-4">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-foreground mb-1">What is it?</p>
                   <p className="text-muted-foreground">
-                    The PEG ratio adjusts the P/E ratio for growth. It's useful for comparing companies
-                    with different growth rates. A high P/E might be justified if the company is
-                    growing fast.
+                    The PEG ratio adjusts the P/E ratio for growth. It's useful for comparing
+                    companies with different growth rates. A high P/E might be justified if the
+                    company is growing fast.
                   </p>
                 </div>
 
@@ -737,17 +864,25 @@ function LearnPage() {
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-1">How to interpret it</p>
                   <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                    <li><strong>&lt; 1.0:</strong> Potentially undervalued relative to growth</li>
-                    <li><strong>= 1.0:</strong> Fairly valued (price matches growth expectations)</li>
-                    <li><strong>&gt; 1.0:</strong> May be overvalued relative to growth</li>
+                    <li>
+                      <strong>&lt; 1.0:</strong> Potentially undervalued relative to growth
+                    </li>
+                    <li>
+                      <strong>= 1.0:</strong> Fairly valued (price matches growth expectations)
+                    </li>
+                    <li>
+                      <strong>&gt; 1.0:</strong> May be overvalued relative to growth
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-1">Example</p>
                   <p className="text-muted-foreground">
-                    Stock A: P/E = 20, Growth = 20% → PEG = 1.0 (fairly valued)<br />
-                    Stock B: P/E = 20, Growth = 10% → PEG = 2.0 (potentially overvalued)<br />
+                    Stock A: P/E = 20, Growth = 20% → PEG = 1.0 (fairly valued)
+                    <br />
+                    Stock B: P/E = 20, Growth = 10% → PEG = 2.0 (potentially overvalued)
+                    <br />
                     Stock C: P/E = 20, Growth = 40% → PEG = 0.5 (potentially undervalued)
                   </p>
                 </div>
@@ -776,7 +911,9 @@ function LearnPage() {
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="bg-slate-50 p-3 rounded-lg">
                   <p className="font-medium text-sm mb-2">Metrics Used in Scoring</p>
-                  <p className="text-xs text-muted-foreground mb-2">Each metric has equal weight (12.5%)</p>
+                  <p className="text-xs text-muted-foreground mb-2">
+                    Each metric has equal weight (12.5%)
+                  </p>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• P/B Ratio</li>
                     <li>• P/E Ratio</li>
@@ -821,12 +958,14 @@ function LearnPage() {
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <p className="font-medium text-amber-800 mb-2">Why Equal Weighting?</p>
                   <p className="text-muted-foreground">
-                    We use equal weights for all 8 metrics (12.5% each) because academic research shows
-                    that equal-weighted portfolios often perform as well as, or better than, portfolios
-                    with optimized weights. This approach is also more robust and easier to understand.
+                    We use equal weights for all 8 metrics (12.5% each) because academic research
+                    shows that equal-weighted portfolios often perform as well as, or better than,
+                    portfolios with optimized weights. This approach is also more robust and easier
+                    to understand.
                   </p>
                   <p className="text-xs text-amber-600 mt-2">
-                    Reference: DeMiguel et al. (2009) &quot;Optimal Versus Naive Diversification&quot;
+                    Reference: DeMiguel et al. (2009) &quot;Optimal Versus Naive
+                    Diversification&quot;
                   </p>
                 </div>
 
@@ -844,17 +983,24 @@ function LearnPage() {
                   <ul className="text-red-700 space-y-1 list-disc list-inside text-xs">
                     <li>Not backtested against historical NSE stock returns</li>
                     <li>Not validated by comparing predictions to actual performance</li>
-                    <li>Not comparable to professional scoring systems like Piotroski F-Score or Altman Z-Score which were empirically derived</li>
+                    <li>
+                      Not comparable to professional scoring systems like Piotroski F-Score or
+                      Altman Z-Score which were empirically derived
+                    </li>
                     <li>Not a guarantee of future performance</li>
                   </ul>
                 </div>
 
                 <div className="bg-blue-50 p-3 rounded-lg">
-                  <p className="font-medium text-blue-800 mb-2">Professional Scoring Systems (For Reference)</p>
+                  <p className="font-medium text-blue-800 mb-2">
+                    Professional Scoring Systems (For Reference)
+                  </p>
                   <p className="text-muted-foreground text-xs">
-                    Professional systems like the <strong>Piotroski F-Score</strong> (9-point scale, academically validated)
-                    and <strong>Altman Z-Score</strong> (bankruptcy prediction) use weights derived from statistical analysis
-                    of actual outcomes. Note: These systems often don&apos;t work for banks due to different accounting structures.
+                    Professional systems like the <strong>Piotroski F-Score</strong> (9-point scale,
+                    academically validated) and <strong>Altman Z-Score</strong> (bankruptcy
+                    prediction) use weights derived from statistical analysis of actual outcomes.
+                    Note: These systems often don&apos;t work for banks due to different accounting
+                    structures.
                   </p>
                 </div>
               </div>
@@ -871,27 +1017,45 @@ function LearnPage() {
 
               <p className="text-sm text-muted-foreground">
                 This calculator is inspired by value investing principles from Benjamin Graham
-                (&quot;The Intelligent Investor&quot;) and Warren Buffett. Here&apos;s how our metrics align
-                with their approaches:
+                (&quot;The Intelligent Investor&quot;) and Warren Buffett. Here&apos;s how our
+                metrics align with their approaches:
               </p>
 
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="bg-green-50 p-3 rounded-lg">
                   <p className="font-medium text-green-800 mb-2">What We Check (Aligned)</p>
                   <ul className="text-xs text-green-700 space-y-1">
-                    <li>✓ <strong>P/B Ratio &lt; 1.5</strong> — Graham&apos;s asset-based valuation</li>
-                    <li>✓ <strong>P/E Ratio &lt; 15</strong> — Graham&apos;s earnings valuation</li>
-                    <li>✓ <strong>Margin of Safety &gt; 30%</strong> — Graham&apos;s core principle</li>
-                    <li>✓ <strong>ROE &gt; 20%</strong> — Buffett&apos;s quality focus</li>
-                    <li>✓ <strong>D/E Ratio &lt; 0.5</strong> — Buffett&apos;s preference for low debt</li>
-                    <li>✓ <strong>Earnings Yield vs T-Bill</strong> — Risk premium analysis</li>
-                    <li>✓ <strong>Dividend Yield</strong> — Income focus</li>
-                    <li>✓ <strong>Payout Ratio</strong> — Dividend sustainability</li>
+                    <li>
+                      ✓ <strong>P/B Ratio &lt; 1.5</strong> — Graham&apos;s asset-based valuation
+                    </li>
+                    <li>
+                      ✓ <strong>P/E Ratio &lt; 15</strong> — Graham&apos;s earnings valuation
+                    </li>
+                    <li>
+                      ✓ <strong>Margin of Safety &gt; 30%</strong> — Graham&apos;s core principle
+                    </li>
+                    <li>
+                      ✓ <strong>ROE &gt; 20%</strong> — Buffett&apos;s quality focus
+                    </li>
+                    <li>
+                      ✓ <strong>D/E Ratio &lt; 0.5</strong> — Buffett&apos;s preference for low debt
+                    </li>
+                    <li>
+                      ✓ <strong>Earnings Yield vs T-Bill</strong> — Risk premium analysis
+                    </li>
+                    <li>
+                      ✓ <strong>Dividend Yield</strong> — Income focus
+                    </li>
+                    <li>
+                      ✓ <strong>Payout Ratio</strong> — Dividend sustainability
+                    </li>
                   </ul>
                 </div>
 
                 <div className="bg-red-50 p-3 rounded-lg">
-                  <p className="font-medium text-red-800 mb-2">What We Don&apos;t Check (Limitations)</p>
+                  <p className="font-medium text-red-800 mb-2">
+                    What We Don&apos;t Check (Limitations)
+                  </p>
                   <ul className="text-xs text-red-700 space-y-1">
                     <li>✗ 20 years uninterrupted dividend history</li>
                     <li>✗ 10 years positive earnings history</li>
@@ -901,7 +1065,8 @@ function LearnPage() {
                     <li>✗ Gross Margin &gt; 40%</li>
                   </ul>
                   <p className="text-xs text-red-600 mt-2 italic">
-                    These require historical data or cash flow statements not collected in this tool.
+                    These require historical data or cash flow statements not collected in this
+                    tool.
                   </p>
                 </div>
               </div>
@@ -910,23 +1075,25 @@ function LearnPage() {
                 <p className="font-medium text-foreground mb-2">Why Our Approach Differs</p>
                 <ul className="text-xs text-muted-foreground space-y-1">
                   <li>
-                    <strong>Data Scope:</strong> This tool works with single-year annual report data.
-                    Graham&apos;s full criteria require 10-20 years of history.
+                    <strong>Data Scope:</strong> This tool works with single-year annual report
+                    data. Graham&apos;s full criteria require 10-20 years of history.
                   </li>
                   <li>
-                    <strong>Scoring Method:</strong> Graham used binary pass/fail (stock must meet ALL criteria).
-                    We use weighted scoring (partial failures allowed). This is more flexible but philosophically different.
+                    <strong>Scoring Method:</strong> Graham used binary pass/fail (stock must meet
+                    ALL criteria). We use weighted scoring (partial failures allowed). This is more
+                    flexible but philosophically different.
                   </li>
                   <li>
-                    <strong>Bank Considerations:</strong> Some metrics (gross margin, current ratio) don&apos;t apply to banks.
-                    We adjust D/E thresholds for the banking sector.
+                    <strong>Bank Considerations:</strong> Some metrics (gross margin, current ratio)
+                    don&apos;t apply to banks. We adjust D/E thresholds for the banking sector.
                   </li>
                 </ul>
               </div>
 
               <p className="text-xs text-muted-foreground italic">
-                This tool captures approximately 60-70% of Graham&apos;s quantitative criteria and aligns well with
-                Buffett&apos;s quality focus. For complete Graham screening, additional historical data would be needed.
+                This tool captures approximately 60-70% of Graham&apos;s quantitative criteria and
+                aligns well with Buffett&apos;s quality focus. For complete Graham screening,
+                additional historical data would be needed.
               </p>
             </CardContent>
           </Card>
@@ -939,7 +1106,8 @@ function LearnPage() {
           <CardContent className="py-8">
             <h3 className="text-xl font-semibold mb-2">Ready to Analyze a Stock?</h3>
             <p className="text-blue-100 mb-4 max-w-md mx-auto">
-              Now that you understand the metrics, try running an analysis on a stock you're interested in.
+              Now that you understand the metrics, try running an analysis on a stock you're
+              interested in.
             </p>
             <Link to="/">
               <Button variant="secondary" size="lg" className="gap-2">

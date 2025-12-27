@@ -16,16 +16,16 @@ A value investing analysis tool for stocks listed on the Nairobi Securities Exch
 
 The calculator uses an equal-weighted scoring system (12.5% each) across 8 metrics:
 
-| Metric | Positive Threshold | Source |
-|--------|-------------------|--------|
-| P/B Ratio | < 1.5 | Graham |
-| P/E Ratio | < 15 | Graham |
-| Margin of Safety | > 30% | Graham |
-| ROE | > 20% | Buffett |
-| D/E Ratio | < 0.5 (non-banks) | Buffett |
-| Dividend Yield | > 5% | Income focus |
-| Payout Ratio | 30-50% | Sustainability |
-| Earnings Yield vs T-Bill | > 1.5x | Risk premium |
+| Metric                   | Positive Threshold | Source         |
+| ------------------------ | ------------------ | -------------- |
+| P/B Ratio                | < 1.5              | Graham         |
+| P/E Ratio                | < 15               | Graham         |
+| Margin of Safety         | > 30%              | Graham         |
+| ROE                      | > 20%              | Buffett        |
+| D/E Ratio                | < 0.5 (non-banks)  | Buffett        |
+| Dividend Yield           | > 5%               | Income focus   |
+| Payout Ratio             | 30-50%             | Sustainability |
+| Earnings Yield vs T-Bill | > 1.5x             | Risk premium   |
 
 See the `/learn` page in the app for detailed methodology and limitations.
 
@@ -79,6 +79,7 @@ pnpm test     # Run tests
 3. Vercel will auto-detect the framework and configure the build
 
 **Build settings** (auto-detected):
+
 - Build Command: `pnpm build`
 - Output Directory: `.output`
 - Install Command: `pnpm install`
@@ -136,6 +137,7 @@ This tool requires manual input of financial data from NSE company annual report
 - **From Market**: Current Stock Price, 52-week High/Low
 
 Annual reports are typically available on:
+
 - Company investor relations websites
 - [NSE website](https://www.nse.co.ke/)
 - [African Financials](https://africanfinancials.com/)
@@ -143,6 +145,7 @@ Annual reports are typically available on:
 ## Disclaimer
 
 This tool is for **educational and informational purposes only**. The scoring system:
+
 - Has NOT been backtested against NSE stock returns
 - Uses thresholds inspired by Graham/Buffett but not empirically validated for Kenya
 - Should NOT be the sole basis for investment decisions
